@@ -45,6 +45,9 @@ marked "Unverified" or "Complete" for NACCulator to recognize the record, and
 each optional form must be marked as submitted within the Z1X for NACCulator to
 find those forms.
 
+_Note: For UDS visits (the -ivp and -fvp flags), NACCulator also expects the
+A1 subject demographics form to be either Unverified or Complete._
+
 _Note: output is written to `STDOUT`; errors are written to `STDERR`; input is
 expected to be from `STDIN` (the command line) unless a file is specified using
 the `-file` flag._
@@ -351,7 +354,7 @@ This is not exhaustive, but here is an explanation of some important files.
 
 * `nacc/run_filters.py` and `tools/preprocess/run_filters.sh`:
     pulls data from REDCap based on the settings found in `nacculator_cfg.ini`
-    (for .py) and `filters_config.cfg` (for .sh).
+    (for .py) and `filters_config.cfg` (for .sh). Supports exporting data from multiple REDCap projects by adding a comma-delimited list of tokens without spaces e.g., `token=token1,token2` to `token` in the `nacculator_cfg.ini` config file.
 
 
 ### Testing
